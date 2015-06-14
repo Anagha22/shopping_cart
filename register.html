@@ -1,0 +1,45 @@
+<html>
+<body>
+<div align="center">
+<h1>.....REGISTER HERE....</h1>	
+<form>
+    First Name:
+    <input type="text" name="firstname"><br>
+    Last Name:
+    <input type="text" name="lastname"><br>
+    E-mail id:
+    <input type="text" name="email-id"><br>
+    Password:
+    <input type="password" name="pwd"><br>
+    state:
+    <input type="text" name="state"><br>
+  
+    <input type="submit" value="submit"><br>
+</form></div>
+
+<?php
+$con=mysqli_connect("localhost","root","","anagha");
+// Check connection
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+$result = mysqli_query($con,"SELECT * FROM E-shopping");
+
+while($row = mysqli_fetch_array($result)) {
+
+  echo "<li>";echo "uid";
+  echo $row['username'];
+  
+  echo $row['email'];
+ 
+  echo $row['password'];
+  echo "<br>";
+  echo "<br>";
+  ;
+}
+
+mysqli_close($con);
+?>      
+</body>
+</html>
