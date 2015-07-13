@@ -1,45 +1,28 @@
 <html>
-<body>
-<div align="center">
-<h1>.....REGISTER HERE....</h1>	
-<form>
-    First Name:
-    <input type="text" name="firstname"><br>
-    Last Name:
-    <input type="text" name="lastname"><br>
-    E-mail id:
-    <input type="text" name="email-id"><br>
-    Password:
-    <input type="password" name="pwd"><br>
-    state:
-    <input type="text" name="state"><br>
-  
-    <input type="submit" value="submit"><br>
-</form></div>
+	<p>
+	<form action="regconnect.php" method="POST">
 
-<?php
-$con=mysqli_connect("localhost","root","","anagha");
-// Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+	<div align="center">
+	<div class="testbox">
+		<h1><font color="black" face="Arial">Registration</font>
+		</h1>
 
-$result = mysqli_query($con,"SELECT * FROM E-shopping");
+	<head>
+	<link rel="stylesheet" type="text/css" href="bg.css">
+	</head>
 
-while($row = mysqli_fetch_array($result)) {
+	<body>
+	<div class="box">
+	<form  onsubmit="return checkForm(this);" action="php.php" method="post">
 
-  echo "<li>";echo "uid";
-  echo $row['username'];
-  
-  echo $row['email'];
- 
-  echo $row['password'];
-  echo "<br>";
-  echo "<br>";
-  ;
-}
+		<p><input type="text" name="username" placeholder="Enter your name"></p>
+		<p><input type="text" name="email" placeholder="Enter email" ></p>
+		<p><input type="password" name="userpassword" placeholder="Enter password" ></p>
 
-mysqli_close($con);
-?>      
+
+	<div class="button"><input type="submit" value="Register" class="btn btn-primary"></div>
+	</div>
+	</form>
+
 </body>
 </html>
